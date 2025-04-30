@@ -49,10 +49,10 @@ public class App {
                     JOptionPane.showMessageDialog(null, "Certa Resposta");
                 }
 
-    // Exercício 1 - Mediana ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    // Exercício 3 - Mediana ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         String mediana = JOptionPane.showInputDialog(null,"Qual a medida de tendência central que mostra o centro da amostra?");
-            if ( mediana == mediana) {  
+            if ( mediana.equalsIgnoreCase("mediana")) {  
                 JOptionPane.showMessageDialog(null, "Certa Resposta");                             
             }else{
                 JOptionPane.showMessageDialog(null, "Resposta Errada","Errado",JOptionPane.ERROR_MESSAGE);
