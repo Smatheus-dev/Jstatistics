@@ -42,14 +42,11 @@ public class App {
  * Mostre a opção escolhida ( o número lido )
  */
 
-        String opcaoVariavel = JOptionPane.showInputDialog(null,"que tipo de variável ele deseja cadastrar: \n  1-Quantitativa \n 2-Qualitativa ");
+        String opcaoVariavel = JOptionPane.showInputDialog(null,
+        "que tipo de variável ele deseja cadastrar: \n  1-Quantitativa \n 2-Qualitativa ");
         int opVariavel = Integer.parseInt(opcaoVariavel);
-        JOptionPane.showMessageDialog(null,opVariavel);
+        JOptionPane.showMessageDialog(null,"Sua escolha foi: "+opVariavel,"JStatistics",JOptionPane.INFORMATION_MESSAGE);
 
-
-
-
-       
 
     }
 }
