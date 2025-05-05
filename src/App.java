@@ -39,31 +39,27 @@ public class App {
                              * condição <=5
                              * incremento/decremento i=+1
                              */
-            int contador = 1;
-            while (contador<3) {
-                JOptionPane.showMessageDialog(null, "Viva o Senai!");
-                contador = contador+1;
-            }
-            int i=1;
-            while (i<=5) {
-                System.out.println(1);
-                i++;
-            }
-            for (int cont= 1;cont<=10;cont++){
-            System.out.println(cont);
-            }
-            String sair;
+                int contador = 1;
+                while (contador<10) {
+                    JOptionPane.showMessageDialog(null, "Viva o Senai!");
+                    contador = contador+1;
+                }
+                int i=1;
+                while (i<=5) {
+                    System.out.println(1);
+                    i++;
+                }
+                for (int cont= 1;cont<=10;cont++){
+                System.out.println(cont);
+                }
+                String sair;
 
-            do{
-                 System.out.println(" sair: s ou n");
+                do{
+                    System.out.println(" sair: s ou n");
                 sair =JOptionPane.showInputDialog( "Deseja sair");    
-               }while (sair.equalsIgnoreCase("não"));{
+                }while (sair.equalsIgnoreCase("não"));{
 
-               }
-
-               
-      
-            }
-
+                }
+        }
     }
 
