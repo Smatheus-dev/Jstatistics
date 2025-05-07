@@ -28,11 +28,9 @@
                     e.printStackTrace();
                 }
 
-
  // ---------------------------------------------------------------------------------------------------------------------------               
                 System.out.println("Desafio Dado!"); 
-                String[] espacoAmostral = {"1","2","3","4","5","6"};    
-                                
+                String[] espacoAmostral = {"1","2","3","4","5","6"};                            
                 
     // Declaração de Variavel                     
                 int cont1 = 0;
