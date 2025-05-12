@@ -42,21 +42,54 @@
                  }
 
                  JOptionPane.showMessageDialog(null, " Informe o tamanho da área do seu jardim: ");
+                // Variáveis para estatísticas
+                double somaAreas = 0;
+                int quantidadeJardins = 0;
+                int jardinsGrandes = 0;
+                boolean cadastrarJardins = true;
 
-            Double largura =  Double.parseDouble(JOptionPane.showInputDialog(null, "Informe a Largura: "));
-            Double comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o Comprimento: " ));
-                 
-            Double area = largura * comprimento;        
-                JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " m²");
+                            while (cadastrarJardins) {
+                                JOptionPane.showMessageDialog(null, " Informe o tamanho da área do seu jardim: ");
+
+                Double largura = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe a Largura: "));
+                Double comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o Comprimento: "));
+                                
+                Double area = largura * comprimento;        
+                            JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " m²");
+
+                                // Classificação e contagem de jardins grandes
+                String classificacao;
+                                if (area >= 100) {
+                                    classificacao = "Grande";
+                                    jardinsGrandes++;
+                                } else {
+                                    classificacao = "Pequeno";
+                                }
+                            JOptionPane.showMessageDialog(null, "Classificação do jardim: " + classificacao, "Classificação", JOptionPane.INFORMATION_MESSAGE);
+
+                                // Acumula para média
+                                somaAreas += area;
+                                quantidadeJardins++;
+
+                                // Pergunta se quer cadastrar outro jardim
+                            int resposta = JOptionPane.showConfirmDialog(null, "Deseja cadastrar outro jardim?", "Continuar", JOptionPane.YES_NO_OPTION);
+                                if (resposta != JOptionPane.YES_OPTION) {
+                                    cadastrarJardins = false;
+                    }
+                }
+
+                                // Mostra estatísticas
+                                if (quantidadeJardins > 0) {
+                double mediaAreas = somaAreas / quantidadeJardins;
+                            JOptionPane.showMessageDialog(null, 
+                                    "Estatísticas:\n" +
+                                    "Total de jardins cadastrados: " + quantidadeJardins + "\n" +
+                                    "Jardins grandes (>100m²): " + jardinsGrandes + "\n" +
+                                    "Média das áreas: " + String.format("%.2f", mediaAreas) + " m²");
+                }
 
  //   ------------------------------------------------Ex 2 ------------------------------------------------------------------------------           
-            String classificacao;
-                        if (area >= 100 ) {
-                            classificacao = "Grande";  
-                        }else{
-                            classificacao = "Pequeno";
-                        }
-                 JOptionPane.showMessageDialog(null, "Classificação do jardim: " + classificacao, "Classificação", JOptionPane.INFORMATION_MESSAGE);
+         
 
 
 
@@ -174,6 +207,49 @@
                     "Compra Finalizada", JOptionPane.INFORMATION_MESSAGE);
 
  //   ------------------------------------------------Ex 3 ------------------------------------------------------------------------------  
+                /*
+                 *  while (cadastrarJardins) {
+                                JOptionPane.showMessageDialog(null, " Informe o tamanho da área do seu jardim: ");
 
+                Double largura = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe a Largura: "));
+                Double comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o Comprimento: "));
+                                
+                Double area = largura * comprimento;        
+                            JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " m²");
+
+                                // Classificação e contagem de jardins grandes
+                String classificacao;
+                                if (area >= 100) {
+                                    classificacao = "Grande";
+                                    jardinsGrandes++;
+                                } else {
+                                    classificacao = "Pequeno";
+                                }
+                            JOptionPane.showMessageDialog(null, "Classificação do jardim: " + classificacao, "Classificação", JOptionPane.INFORMATION_MESSAGE);
+
+                                // Acumula para média
+                                somaAreas += area;
+                                quantidadeJardins++;
+
+                                // Pergunta se quer cadastrar outro jardim
+                            int resposta = JOptionPane.showConfirmDialog(null, "Deseja cadastrar outro jardim?", "Continuar", JOptionPane.YES_NO_OPTION);
+                                if (resposta != JOptionPane.YES_OPTION) {
+                                    cadastrarJardins = false;
+                    }
+                }
+
+                                // Mostra estatísticas
+                                if (quantidadeJardins > 0) {
+                double mediaAreas = somaAreas / quantidadeJardins;
+                            JOptionPane.showMessageDialog(null, 
+                                    "Estatísticas:\n" +
+                                    "Total de jardins cadastrados: " + quantidadeJardins + "\n" +
+                                    "Jardins grandes (>100m²): " + jardinsGrandes + "\n" +
+                                    "Média das áreas: " + String.format("%.2f", mediaAreas) + " m²");
+                } 
+                 */
+        
+
+                
             }
         }
