@@ -1,6 +1,6 @@
  //   ------------------------------------------------Ex 1 ------------------------------------------------------------------------------ 
     import javax.swing.JOptionPane;
-
+    import java.util.ArrayList;
 
     public class App {                                                  
         public static void main(String[] args) throws Exception {
@@ -28,24 +28,23 @@
                                     break;                        
                                 }
                 String MenssagemConfirmacao = "Confirme suas informações:\n" +
-                                                "Nome: " + nomeCliente + "\n" +
-                                                "telefone: " + telefone + "\n" + 
-                                                "Endereço :" + enderecoCliente;   
+                                    "Nome: " + nomeCliente + "\n" +
+                                    "telefone: " + telefone + "\n" + 
+                                    "Endereço :" + enderecoCliente;   
                 int escolha = JOptionPane.showConfirmDialog(null, MenssagemConfirmacao, "Confirmação", JOptionPane.YES_NO_OPTION);
                             if (escolha == JOptionPane.YES_OPTION) {
                                 JOptionPane.showMessageDialog(null, "Cadastrado com Sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                                 cadastrado = true; // Para sair do loop após o sucesso
                             } else {
                                 JOptionPane.showMessageDialog(null, "Cadastro cancelado. Por favor, insira as informações novamente.", "Aviso", JOptionPane.WARNING_MESSAGE);
-                            }
-
+                    }
                  }
-
-                 JOptionPane.showMessageDialog(null, " Informe o tamanho da área do seu jardim: ");
                 // Variáveis para estatísticas
+
                 double somaAreas = 0;
                 int quantidadeJardins = 0;
                 int jardinsGrandes = 0;
+                ArrayList<Double> areasJardins = new ArrayList<>(); // Usando ArrayList para armazenar áreas
                 boolean cadastrarJardins = true;
 
                             while (cadastrarJardins) {
@@ -54,9 +53,10 @@
                 Double largura = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe a Largura: "));
                 Double comprimento = Double.parseDouble(JOptionPane.showInputDialog(null, "Informe o Comprimento: "));
                                 
-                Double area = largura * comprimento;        
+                Double area = largura * comprimento;  
+                        areasJardins.add(area); // Armazena a área no ArrayList      
                             JOptionPane.showMessageDialog(null, "A área do jardim é: " + area + " m²");
-
+    
                                 // Classificação e contagem de jardins grandes
                 String classificacao;
                                 if (area >= 100) {
@@ -90,9 +90,6 @@
 
  //   ------------------------------------------------Ex 2 ------------------------------------------------------------------------------           
          
-
-
-
                  Double precoTotal = 0.0;
                  Double contServico1 = 0.0; 
                  Double contServico2 = 0.0; 
@@ -101,7 +98,6 @@
                  Double contServico5 = 0.0; 
                  boolean continuar = true;
                  
-
                  while (continuar) {
                  String menu = "Menu de Opções:\n"
                               + "1. Manutenção de jardins\n"
@@ -157,11 +153,23 @@
                                 contServico5++;
                                 precoTotal += 300;
                                 break;
-                            case 6:
+                                case 6:
+                                // Exibir todas as áreas armazenadas
+                                if (areasJardins.isEmpty()) {
+                                    JOptionPane.showMessageDialog(null, "Nenhuma área de jardim foi cadastrada ainda.", "Áreas Cadastradas", JOptionPane.INFORMATION_MESSAGE);
+                                } else {
+                                    StringBuilder areasStr = new StringBuilder("Áreas dos jardins cadastrados:\n");
+                                    for (int i = 0; i < areasJardins.size(); i++) {
+                                        areasStr.append("Jardim ").append(i+1).append(": ").append(areasJardins.get(i)).append(" m²\n");
+                                    }
+                                    JOptionPane.showMessageDialog(null, areasStr.toString(), "Áreas Cadastradas", JOptionPane.INFORMATION_MESSAGE);
+                                }
+                                break;
+                            case 7:
                                 continuar = false;
                                 break;
                             default:
-                                JOptionPane.showMessageDialog(null, "Opção inválida! Digite um número entre 1 e 6.");
+                                JOptionPane.showMessageDialog(null, "Opção inválida! Digite um número entre 1 e 7.");
                         }
                         
                         // Mostrar resumo parcial após cada serviço adicionado
@@ -206,8 +214,11 @@
                     "\nTOTAL A PAGAR: R$" + precoFinal, 
                     "Compra Finalizada", JOptionPane.INFORMATION_MESSAGE);
 
+
  //   ------------------------------------------------Ex 3 ------------------------------------------------------------------------------  
-                /*
+
+
+    /*
                  *  while (cadastrarJardins) {
                                 JOptionPane.showMessageDialog(null, " Informe o tamanho da área do seu jardim: ");
 
@@ -237,7 +248,6 @@
                                     cadastrarJardins = false;
                     }
                 }
-
                                 // Mostra estatísticas
                                 if (quantidadeJardins > 0) {
                 double mediaAreas = somaAreas / quantidadeJardins;
@@ -249,7 +259,23 @@
                 } 
                  */
         
+//   ------------------------------------------------Ex 4 ------------------------------------------------------------------------------  
+        /*
+         *   import java.util.ArrayList;
+         * 
+         *  case 6:
+                                // Exibir todas as áreas armazenadas
+                                if (areasJardins.isEmpty()) {
+                                    JOptionPane.showMessageDialog(null, "Nenhuma área de jardim foi cadastrada ainda.", "Áreas Cadastradas", JOptionPane.INFORMATION_MESSAGE);
+                                } else {
+                                    StringBuilder areasStr = new StringBuilder("Áreas dos jardins cadastrados:\n");
+                                    for (int i = 0; i < areasJardins.size(); i++) {
+                                        areasStr.append("Jardim ").append(i+1).append(": ").append(areasJardins.get(i)).append(" m²\n");
+                                    }
+                                    JOptionPane.showMessageDialog(null, areasStr.toString(), "Áreas Cadastradas", JOptionPane.INFORMATION_MESSAGE);
+                                }
+         */
 
-                
             }
-        }
+        
+    }
