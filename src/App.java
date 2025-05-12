@@ -276,6 +276,17 @@
                                 }
          */
 
+
+                    /* 
+                                                  Nível 4 - Vetores Básicos (Itens 10-12)
+                                
+                        ✅ 10. Armazenar áreas em vetor - Usa ArrayList<Double> para armazenar e exibir áreas (opção 6 no menu)
+
+                        ⚠️ 11. Moda das áreas - Não foi implementado o cálculo do valor mais frequente
+
+                        ⚠️ 12. Ordenar serviços por valor - Não foi implementada a ordenação dos valores dos serviços
+
+                    */
             }
         
     }
